@@ -33,6 +33,6 @@ jobs:
           docker build -t pipeline-t04-be:latest -f dockerfile-lizeth/Dockerfile .
 
       - name: Push Docker image
-        run: |
+        run: | 
           docker tag pipeline-t04-be:latest lizethquispesuarez/pipeline-t04-be:latest
           docker push lizethquispesuarez/pipeline-t04-be:latest
