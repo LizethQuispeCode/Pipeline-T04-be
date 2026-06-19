@@ -9,6 +9,10 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
+    defaults:
+      run:
+        working-directory: Visons
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -30,9 +34,9 @@ jobs:
 
       - name: Build Docker image
         run: |
-          docker build -t pipeline-t04-be:latest -f dockerfile-lizeth/Dockerfile .
+          docker build -t pipeline-t04-be:latest -f Dockerfile .
 
       - name: Push Docker image
-        run: | 
+        run: |
           docker tag pipeline-t04-be:latest lizethquispesuarez/pipeline-t04-be:latest
           docker push lizethquispesuarez/pipeline-t04-be:latest
